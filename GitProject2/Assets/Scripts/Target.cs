@@ -4,11 +4,13 @@ using System.Collections.Generic;
 
 public class Target : MonoBehaviour
 {
-    private float speed = 4.0f;
+    private float speed = 10.0f;
     private Rigidbody targetRb;
+    private GameManager gameManager;
 
     void Start()
     {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         targetRb = GetComponent<Rigidbody>();
         // Проверь, что targetRb не null
         if (targetRb == null)
@@ -24,9 +26,18 @@ public class Target : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.CompareTag("Water"))
+        if (collision.gameObject.CompareTag("Water"))
         {
             Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Base"))
+        {
+            Destroy(gameObject);
+            gameManager.GameOver();
         }
     }
 }
