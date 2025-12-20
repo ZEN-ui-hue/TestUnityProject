@@ -5,17 +5,26 @@ using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour
+public class SpawnManager : MonoBehaviour
 {
     public Button restartButton;
     public TextMeshProUGUI gameOverText;
     public GameObject[] spawners;
     public GameObject[] target;
-    public Button startButton;
     private bool isGameActive;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+    }
+
+    private void OnEnable()
+    {
+        ButtonManager.StartClick += GameStart;
+    }
+
+    private void OnDisable()
+    {
+        ButtonManager.StartClick -= GameStart;
     }
 
     IEnumerator SpawnTargets()
@@ -45,7 +54,6 @@ public class GameManager : MonoBehaviour
     {
         isGameActive = true;
         StartCoroutine(SpawnTargets());
-        startButton.gameObject.SetActive(false);
     }
 
 

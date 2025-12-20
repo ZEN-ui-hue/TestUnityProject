@@ -199,6 +199,7 @@ GameObject:
   - component: {fileID: 19324970}
   - component: {fileID: 19324969}
   - component: {fileID: 19324968}
+  - component: {fileID: 19324971}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -269,19 +270,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 19324969}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1279911347}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: GameStart
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &19324969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,6 +309,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 19324966}
   m_CullTransparentMesh: 1
+--- !u!114 &19324971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19324966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 964ddcda509074e40900bae1768c5ad3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonManager
 --- !u!1001 &34271790
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -749,8 +750,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1279911347}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+      - m_Target: {fileID: 1279911349}
+        m_TargetAssemblyTypeName: SpawnManager, Assembly-CSharp
         m_MethodName: GameRestart
         m_Mode: 1
         m_Arguments:
@@ -3220,37 +3221,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1279911348}
-  - component: {fileID: 1279911347}
+  - component: {fileID: 1279911349}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: SpawnManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1279911347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1279911346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b4323fd059980c47a0330dcf9904dcf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  restartButton: {fileID: 176488228}
-  gameOverText: {fileID: 1214915594}
-  spawners:
-  - {fileID: 96810837}
-  - {fileID: 980105597}
-  - {fileID: 1740683442}
-  target:
-  - {fileID: 9137032837993464747, guid: 4534b9cc6330aed499be54b02abf5283, type: 3}
-  - {fileID: 1845945369076765872, guid: 3d2e6e9a35aebe848bcaf85c3ec6c0f1, type: 3}
-  - {fileID: 9137032837993464747, guid: d66c23583a584ef4195dbea312c0b2a7, type: 3}
-  startButton: {fileID: 19324968}
 --- !u!4 &1279911348
 Transform:
   m_ObjectHideFlags: 0
@@ -3266,6 +3244,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1279911349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279911346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2215ff107bea0b4a9f05079de1289e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnManager
+  restartButton: {fileID: 176488228}
+  gameOverText: {fileID: 1214915594}
+  spawners:
+  - {fileID: 96810837}
+  - {fileID: 980105597}
+  - {fileID: 1740683442}
+  target:
+  - {fileID: 9137032837993464747, guid: 4534b9cc6330aed499be54b02abf5283, type: 3}
+  - {fileID: 1845945369076765872, guid: 3d2e6e9a35aebe848bcaf85c3ec6c0f1, type: 3}
+  - {fileID: 9137032837993464747, guid: d66c23583a584ef4195dbea312c0b2a7, type: 3}
 --- !u!1001 &1296077157
 PrefabInstance:
   m_ObjectHideFlags: 0

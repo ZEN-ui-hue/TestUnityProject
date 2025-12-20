@@ -6,11 +6,11 @@ public class Target : MonoBehaviour
 {
     private float speed = 10.0f;
     private Rigidbody targetRb;
-    private GameManager gameManager;
+    private SpawnManager spawnManager;
 
     void Start()
     {
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
         targetRb = GetComponent<Rigidbody>();
         // Проверь, что targetRb не null
         if (targetRb == null)
@@ -37,7 +37,7 @@ public class Target : MonoBehaviour
         if (other.gameObject.CompareTag("Base"))
         {
             Destroy(gameObject);
-            gameManager.GameOver();
+            spawnManager.GameOver();
         }
     }
 }
