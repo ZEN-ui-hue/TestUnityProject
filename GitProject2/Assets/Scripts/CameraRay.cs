@@ -8,7 +8,7 @@ public class CameraRay : MonoBehaviour
     public GameObject prop;
     public LayerMask mask;
     public LayerMask propMask;
-    private float chekRadius = 1.0f;
+    private float chekRadius = 1.5f;
 
     // Update is called once per frame
     void LateUpdate()
